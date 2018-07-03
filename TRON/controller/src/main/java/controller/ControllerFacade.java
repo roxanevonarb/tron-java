@@ -2,10 +2,71 @@ package controller;
 
 import java.sql.SQLException;
 import java.util.List;
-
 import model.Example;
 import model.IModel;
 import view.IView;
+package controller;
+import java.sql.SQLException;
+import java.util.List;
+import model.Example;
+import model.IModel;
+import view.IView;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+
+public class Biker {
+
+    public enum Direction {
+        NORD,
+        SUD,
+        EST,
+        OUEST
+    }
+
+    private int x = 0;
+    private int y = 0;
+
+    private int player;
+
+    public String name;
+
+    private Direction direction;
+
+    public Biker(int player, String name) {
+        this.player = player;
+        this.name = name;
+        reset();
+    }
+
+    public void reset() {
+        if(player == 1) direction = Direction.EST;
+        if(player == 2) direction = Direction.OUEST;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -35,12 +96,11 @@ public class ControllerFacade implements IController {
         this.model = model;
     }
 
-    /**
-     * Start.
-     *
-     * @throws SQLException
-     *             the SQL exception
-     */
+   
+    
+    
+    
+    
     public void start() throws SQLException {
         this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 

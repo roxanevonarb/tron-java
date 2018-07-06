@@ -21,23 +21,7 @@ public class Jframe extends JFrame implements KeyListener{
 	    addKeyListener(this);
 	    requestFocusInWindow();
 
-	}
 
-	@Override
-	public void keyPressed(KeyEvent key) {
-		// TODO Auto-generated method stub
-		int keycode = key.getKeyCode();
-			
-			switch(keycode)// Les valeurs sont contenue dans KeyEvent. Elles commencent par VK_ et finissent par le nom de la touche
-			{
-			case KeyEvent.VK_Q:
-				fonction_gauche();
-				break;
-			case KeyEvent.VK_D:
-				fonction_droite();
-				break;
-			}
-	}
 
 	private void fonction_gauche() {
 		// TODO Auto-generated method stub
@@ -52,12 +36,12 @@ public class Jframe extends JFrame implements KeyListener{
 	@Override
 	public void keyReleased(KeyEvent key) {
 		// TODO Auto-generated method stub
-		//touche relachée
+		//touche relachÃ©e
 	}
 
 	@Override
 	public void keyTyped(KeyEvent key) {
 		// TODO Auto-generated method stub
-		//touche appuyée
+		//touche appuyÃ©e
 	}
 }
